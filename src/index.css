@@ -1,0 +1,83 @@
+.navlink {
+  text-decoration: none;
+  color: white;
+  height: 40px;
+}
+.navlink:hover {
+  color: white;
+}
+
+.navtar {
+height: 40px;
+width: 40px;
+}
+
+.nav-item {
+  height: 40px;
+}
+
+.avatar-div {
+  padding-top: 0px;
+}
+
+.QuestAvatar {
+  height: 80px;
+  width: 80px;
+}
+
+.ResultAvatar {
+  height: 80px;
+  width: 80px;
+}
+
+/* Used on results page */
+.card-your-vote {
+  position: absolute;
+  right: -18px;
+  top: -20px;
+  /* background: #ff4444; */
+  background: #ffec44;
+  border-radius: 50%;
+  text-align: center;
+  /* color: #fff; */
+  color: rgb(3, 3, 3);
+  font-size: 12px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  padding: 5px 0 0 0; 
+  /* z-index: 0; */
+}
+
+.progress {
+  height: 26px;
+
+}
+.trophy {
+  position: absolute;
+  /* left: 5px;
+  top: 5px; */
+  left: -48px;
+  top: 4px; 
+  /* font-weight: bold */
+
+}
+.trophy-background {
+border-left: 56px solid lightgray;
+border-right: 56px solid transparent;
+border-bottom: 56px solid transparent;
+height: 0;
+width: 0;
+position: absolute;
+top: 0px;
+left: 0px;
+z-index: 1;
+}
+
+.navLabel {
+  color: white;
+}
+
+.center {
+  text-align: center
+}
