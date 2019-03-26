@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+
 class NavBar extends React.Component {
     
     render() {
@@ -16,8 +17,12 @@ class NavBar extends React.Component {
                                     <Link className="navlink" to='/'>Home</Link>
                                 </div>
                                 : <div>
-                                    <Link className="navlink" to='/login'>Home</Link>
-                                </div>
+                                    <Link className="navlink"
+                                        to={{pathname: '/login',
+                                            state: { referrer: "/" }
+                                        }}
+                                    >Home</Link>
+                                </div>                                
                                 }
                             </div>
                         </li>
@@ -27,8 +32,12 @@ class NavBar extends React.Component {
                                 <Link className="navlink" to='/add'>New Question</Link>
                             </div>
                             : <div className="nav-link pl-4">
-                                <Link className="navlink" to='/login'>New Question</Link>
-                            </div>
+                                <Link className="navlink"
+                                    to={{pathname: '/login',
+                                        state: { referrer: "/" }
+                                    }}
+                                >New Question</Link>
+                            </div>  
                             }
                         </li>
                         <li className="nav-item">
@@ -37,7 +46,11 @@ class NavBar extends React.Component {
                                 <Link className="navlink" to='/leaderboard'>Leader Board</Link>
                             </div>
                             : <div className="nav-link pl-4">
-                                <Link className="navlink" to='/login'>Leader Board</Link>
+                                <Link className="navlink"
+                                    to={{pathname: '/login',
+                                        state: { referrer: "/" }
+                                    }}
+                                >Leader Board</Link>
                             </div>
                             }
                         </li>
@@ -61,10 +74,18 @@ class NavBar extends React.Component {
                             <div className="nav-link">
                                 {(this.props.authedUser)                             
                                 ? <div>
-                                    <Link className="navlink navitem"  to='/login'>Logout</Link>
+                                    <Link className="navlink"
+                                        to={{pathname: '/login',
+                                            state: { referrer: "/" }
+                                        }}
+                                    >Logout</Link>
                                 </div>
                                 : <div>
-                                    <Link className="navlink navitem"  to='/login'>Login</Link>
+                                    <Link className="navlink"
+                                        to={{pathname: '/login',
+                                            state: { referrer: "/" }
+                                        }}
+                                    >Login</Link>
                                 </div>
                                 }
                             </div>

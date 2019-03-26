@@ -23,7 +23,12 @@ class NewQuestion extends React.Component {
 
     render() {
         if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
+            return <Redirect
+                    to={{
+                    pathname: "/login",
+                    state: { referrer: "/add" }
+                    }}
+                />
         }
         return (
             <div>

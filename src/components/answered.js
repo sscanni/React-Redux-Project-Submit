@@ -6,7 +6,12 @@ import { Redirect } from 'react-router-dom'
 class Home extends React.Component {
     render() {
         if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
+            return <Redirect
+                    to={{
+                    pathname: "/login",
+                    state: { referrer: "/answered" }
+                    }}
+                />
         }
         return (
             <div>
@@ -46,7 +51,7 @@ class Home extends React.Component {
                                                             <div className="pl-3 media-body border border-top-0 border-bottom-0 border-right-0">
                                                                 <h5>Would you rather</h5>
                                                                 <p>...{this.props.questions[id].optionOne.text} ...</p>
-                                                                <Link to={`/results/${id}`}>
+                                                                <Link to={`/results/${id}`}> 
                                                                     <button className="btn btn-outline-primary btn-sm btn-block">View Poll</button>
                                                                 </Link>
                                                             </div>

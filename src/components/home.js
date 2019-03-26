@@ -7,7 +7,12 @@ class Home extends React.Component {
 
     render() {
         if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
+            return <Redirect
+                    to={{
+                    pathname: "/login",
+                    state: { referrer: "/" }
+                    }}
+                />
         }
         return (
             <div>

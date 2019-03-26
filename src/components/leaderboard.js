@@ -9,7 +9,12 @@ class LeaderBoard extends React.Component {
         const trophyColor = [{color: 'rgb(197, 168, 0)'}, {color: 'rgb(0, 128, 0)'}, {color: 'rgb(160, 82, 45)'}]
 
         if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
+            return <Redirect
+                    to={{
+                    pathname: "/login",
+                    state: { referrer: "/leaderboard" }
+                    }}
+                />
         }
         return (
             <div className="container col-md-4 mt-3">

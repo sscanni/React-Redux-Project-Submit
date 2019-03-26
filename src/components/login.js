@@ -20,12 +20,13 @@ class Login extends React.Component {
     }
 
     subItem = (e) => {
+        console.log("this.props.location.state.referrer=", this.props.location.state.referrer)
         e.preventDefault()
         const { userid } = this.state
         if (userid) {
             this.props.dispatch(setAuthedUser(userid))
         }
-        this.props.history.push('/')
+        this.props.history.push(this.props.location.state.referrer)
     }
 
     componentDidMount() {
@@ -34,10 +35,6 @@ class Login extends React.Component {
         dispatch(setAuthedUser(aUser))
     }
     render() {
-
-        // const aUser = null
-        // const { dispatch } = this.props
-        // dispatch(setAuthedUser(aUser))
 
         return (
             <div className="container col-md-4 mt-3">
@@ -87,7 +84,7 @@ class Login extends React.Component {
 function mapStateToProps({ users }) {
     return {
         userIds: Object.keys(users),
-        users
+        users,
     }
 }
 

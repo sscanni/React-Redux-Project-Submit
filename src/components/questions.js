@@ -21,10 +21,16 @@ class Questions extends React.Component {
         this.props.history.push(`/results/${id}`)
     }
     render() {
-        if (this.props.authedUser === null) {
-            return <Redirect to='/login' />
-        }
         const { id } = this.props
+        if (this.props.authedUser === null) {
+            return <Redirect
+                    to={{
+                    pathname: "/login",
+                    search: id,
+                    state: { referrer: "/questions/" + id}
+                    }}
+                />
+        }
         return (
             <div className="container col-md-4 mt-3">
                 <div className="card-body">
