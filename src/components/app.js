@@ -5,7 +5,6 @@ import { handleInitialData } from '../actions/shared'
 import LoadingBar from 'react-redux-loading'
 import Home from './home'
 import Answered from './answered'
-import Results from './results'
 import Questions from './questions'
 import AddQuestion from './addquestion'
 import LeaderBoard from './leaderboard'
@@ -28,7 +27,6 @@ class App extends Component {
               : <div>
                   <Route path='/' exact component={Home} />
                   <Route path='/answered' component={Answered} />
-                  <Route path='/results/:id' component={Results} />
                   <Route path='/questions/:id' component={Questions} />
                   <Route path='/add' component={AddQuestion} />
                   <Route path='/leaderboard' component={LeaderBoard} />                  

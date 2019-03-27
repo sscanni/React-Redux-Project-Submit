@@ -20,7 +20,6 @@ class Login extends React.Component {
     }
 
     subItem = (e) => {
-        console.log("this.props.location.state.referrer=", this.props.location.state.referrer)
         e.preventDefault()
         const { userid } = this.state
         if (userid) {
